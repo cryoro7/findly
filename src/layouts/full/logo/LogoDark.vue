@@ -1,7 +1,7 @@
 <template>
   <div class="logo">
     <RouterLink to="/">
-      <svg width="100" height="100" viewBox="0 0 440 552" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 440 552" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M206 137L220.5 129L235 137V356H206V137Z" fill="#134665" />
         <path
           d="M55 3.35221e-05L55 55.3192C148.046 49.6458 228.08 84.1439 277.128 134.468L355.425 134.468C262.719 37.4757 196.895 8.12011 55 3.35221e-05Z"

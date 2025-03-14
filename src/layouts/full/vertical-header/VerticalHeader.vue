@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useCustomizerStore } from '../../../stores/customizer';
 // Icon Imports
 import { BellIcon, SettingsIcon, SearchIcon, Menu2Icon } from 'vue-tabler-icons';
@@ -11,9 +11,15 @@ import ProfileDD from './ProfileDD.vue';
 
 const customizer = useCustomizerStore();
 const showSearch = ref(false);
+const title = ref('');
+
 function searchbox() {
   showSearch.value = !showSearch.value;
 }
+
+onMounted(() => {
+  title.value = customizer.getState.title;
+});
 </script>
 
 <template>
@@ -40,9 +46,10 @@ function searchbox() {
     >
       <Menu2Icon size="20" stroke-width="1.5" />
     </v-btn>
+    <span class="font-weight-bold ml-5"> {{ title }} </span>
 
     <!-- search mobile -->
-    <v-btn
+    <!-- <v-btn
       class="hidden-lg-and-up text-secondary ml-3"
       color="lightsecondary"
       icon
@@ -52,7 +59,7 @@ function searchbox() {
       @click="searchbox"
     >
       <SearchIcon size="17" stroke-width="1.5" />
-    </v-btn>
+    </v-btn> -->
 
     <!-- <v-sheet v-if="showSearch" class="search-sheet v-col-12">
       <Searchbar :closesearch="searchbox" />

@@ -20,7 +20,6 @@ const breadcrumbs = shallowRef([
 </script>
 
 <template>
-  <BaseBreadcrumb :title="page.title" :breadcrumbs="breadcrumbs"></BaseBreadcrumb>
   <v-row>
     <v-col cols="12" md="12">
       <UiParentCard title="Simple Title">

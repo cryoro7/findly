@@ -39,19 +39,19 @@ router.beforeEach(async (to, from, next) => {
   const authRequired = !isPublicPage && to.matched.some((record) => record.meta.requiresAuth);
 
   // User not logged in and trying to access a restricted page
-  if (authRequired && !auth.user) {
-    auth.returnUrl = to.fullPath; // Save the intended page
-    next('/login');
-  } else if (auth.user && to.path === '/login') {
-    // User logged in and trying to access the login page
-    next({
-      query: {
-        ...to.query,
-        redirect: auth.returnUrl !== '/' ? to.fullPath : undefined
-      }
-    });
-  } else {
-    // All other scenarios, either public page or authorized access
-    next();
-  }
+  // if (authRequired && !auth.user) {
+  //   auth.returnUrl = to.fullPath; // Save the intended page
+  //   next('/login');
+  // } else if (auth.user && to.path === '/login') {
+  //   // User logged in and trying to access the login page
+  //   next({
+  //     query: {
+  //       ...to.query,
+  //       redirect: auth.returnUrl !== '/' ? to.fullPath : undefined
+  //     }
+  //   });
+  // } else {
+  //   // All other scenarios, either public page or authorized access
+  // }
+  next();
 });

@@ -27,7 +27,7 @@ const sidebarMenu = shallowRef(sidebarItems);
     <!---Logo part -->
 
     <div style="margin-top: 20px" class="text-center">
-      <Logo />
+      <Logo style="width: 100px; place-self: center" />
     </div>
     <!-- ---------------------------------------------- -->
     <!---Navigation -->

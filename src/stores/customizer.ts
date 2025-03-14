@@ -8,10 +8,17 @@ export const useCustomizerStore = defineStore({
     Customizer_drawer: config.Customizer_drawer,
     mini_sidebar: config.mini_sidebar,
     fontTheme: config.fontTheme,
-    inputBg: config.inputBg
+    inputBg: config.inputBg,
+    title: '',
+    subtitile: '',
+    backUrl: ''
   }),
 
-  getters: {},
+  getters: {
+    getState(state) {
+      return state;
+    }
+  },
   actions: {
     SET_SIDEBAR_DRAWER() {
       this.Sidebar_drawer = !this.Sidebar_drawer;
@@ -24,6 +31,11 @@ export const useCustomizerStore = defineStore({
     },
     SET_FONT(payload: string) {
       this.fontTheme = payload;
+    },
+    SET_TITLE(title, subtitile, backUrl = '') {
+      this.title = title;
+      this.subtitle = subtitile;
+      this.backUrl = backUrl;
     }
   }
 });
